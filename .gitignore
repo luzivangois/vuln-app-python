@@ -1,0 +1,25 @@
+# Compilação do Python
+__pycache__/
+*/__pycache__/
+*/__pycache__/*
+*.pyc
+*.pyo
+*.pyd
+
+# Log
+*.log
+
+# Configurações de Editor
+.vscode/
+.idea/
+
+# Dependências e Cache
+/.mypy_cache/
+/.tox/
+/.coverage
+/.nox/
+
+# Arquivos de Ambiente
+.env
+.venv
+.flaskenv
