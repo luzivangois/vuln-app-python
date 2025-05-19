@@ -18,19 +18,19 @@ git clone https://github.com/luzivangois/vuln-app-python.git
 
 2. Crie e Ative o ambiente virtual (.venv) para poder instalar as dependências
    
-- Ambiente Linux
+> Ambiente Linux
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-- Ambiente Windows (cmd)
+> Ambiente Windows (cmd)
 ```bash
 python3 -m venv .venv
 .venv\Scripts\activate.bat
 ```
 
-- Ambiente Windows (powershell)
+> Ambiente Windows (powershell)
 ```bash
 python3 -m venv .venv
 .venv\Scripts\Activate.ps1
@@ -44,7 +44,7 @@ pip3 install -r requirements.txt
 
 4. Rode a aplicação localmente
 
-- por padrão a aplicação vai rodar na porta 5000 do local host (http://localhost:5000)
+> por padrão a aplicação vai rodar na porta 5000 do local host (http://localhost:5000)
 ```bash
 python3 main.py
 ```
