@@ -51,13 +51,6 @@ def login():
 
 @user.route('/allusers', methods=['GET'])
 def get_all_users():
-    token = request.headers.get('Authorization')
-
-    claims = services.jwt_service.get_user_role(token)
-
-    if claims != 'admin':
-        return 'Usuário sem permissão para consultar os dados solicitados.', 403
-
     users = User.query.all()
     return jsonify([{'id': user.id, 'name': user.name, 'login': user.login, 'role': user.role} for user in users])
 
@@ -104,6 +97,13 @@ def update_user(id):
 
 @user.route('/delete/<id>', methods=['DELETE'])
 def delete_user(id):
+    token = request.headers.get('Authorization')
+
+    claims = services.jwt_service.get_user_role(token)
+
+    if claims != 'admin':
+        return 'Usuário sem permissão para realizar a ação solicitada.', 403
+
     try:
         uid = uuid.UUID(id)
     except ValueError:
